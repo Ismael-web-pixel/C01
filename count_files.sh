@@ -1,8 +1,9 @@
 #!/bin/bash
 
-repertoire="$(ls | wc -l)"
+read myfolder 
 
-myfolder="C01"
+repertoire="$(ls $myfolder | wc -l)"
+
 
 if [ "$repertoire" ]; then
 echo "Le dossier "$myfolder" contient "$repertoire" fichier(s)."

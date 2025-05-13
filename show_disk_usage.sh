@@ -1,17 +1,15 @@
 #!/bin/bash
 
-# Si un chemin est fourni, on l’utilise. Sinon, on prend le dossier courant.
-chemin="${1:-.}"
+echo "--- Utilisation de l'espace disque (tous les systèmes de fichiers) ---"
+df -h
+echo "-------------------------------------------------------------------"
 
-# Vérifie si le chemin existe
-if [ ! -e "$chemin" ]; then
-  echo "Erreur : le chemin '$chemin' n'existe pas."
-  exit 1
+
+if [ "$utilisation" -ge "$seuil_utilisation" ]; then
+  echo -e "\n AVERTISSEMENT : L'utilisation de la partition '$partition_a_verifier' a atteint ou dépassé $utilisation% !"
 fi
 
-echo "=== Utilisation générale du disque (toutes les partitions) ==="
-df -h
-
-echo
-echo "=== Taille du dossier '$chemin' ==="
-du -sh "$chemin"
+# Optionnel : Afficher également la taille du répertoire courant de manière lisible
+echo -e "\n--- Taille du répertoire courant ---"
+du -sh .
+echo "-------------------------------------"

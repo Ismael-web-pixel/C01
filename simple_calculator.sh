@@ -7,13 +7,13 @@ op=$3
 read a op b
 
 # Tester l'opérateur
-if [[ "$op" == "+" ]]; then
+if [[ "$op" = "+" ]]; then
     result=$((a + b))
-elif [[ "$op" == "-" ]]; then
+elif [[ "$op" = "-" ]]; then
     result=$((a - b))
-elif [[ "$op" == "*" ]]; then
+elif [[ "$op" = "*" ]]; then
     result=$((a * b))
-elif [[ "$op" == "/" ]]; then
+elif [[ "$op" = "/" ]]; then
     result=$((a / b))
 else
     echo "Opérateur inconnu"
