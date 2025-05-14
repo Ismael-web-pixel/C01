@@ -8,13 +8,10 @@ read a b op
 
 if [ "$op" = "+" ]; then
     result=$(($a + $b))
-
 elif [ "$op" = "*" ]; then
-    result=$(($a + $b))
-
+    result=$(($a * $b))
 elif [ "$op" = "-" ]; then
-    result=$(($a + $b))
-
+    result=$(($a - $b))
 elif [ "$op" = "/" ]; then
     result=$(($a / $b))
 fi
